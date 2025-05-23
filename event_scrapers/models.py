@@ -9,6 +9,7 @@ from dataclasses import dataclass
 @dataclass
 class Event:
     name: str
-    date: str
+    startDate: str
+    endDate: str
     location: str
     link: str

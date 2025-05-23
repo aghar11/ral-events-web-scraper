@@ -24,15 +24,20 @@ def get_dpac_events():
     for event in event_elements:
         try:
             name = event.select_one('.title').get_text(strip=True)
-            date = event.select_one('.date')['aria-label']
-            print(date)
+            if event.select_one('.m-date__singleDate') is not None:
+                startDate = event.select_one('.m-date__singleDate').get_text()
+                endDate = ""
+            else:
+                startDate = event.select_one('.m-date__rangeFirst').get_text()
+                endDate = event.select_one('.m-date__rangeLast').get_text()
             location = "DPAC - Durham, NC"
             link = event.select_one('a')['href']
 
             events.append(
                 Event(
                     name=name,
-                    date=date,
+                    startDate=startDate,
+                    endDate=endDate,
                     location=location,
                     link=link
                 )
