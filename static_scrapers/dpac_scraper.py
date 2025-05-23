@@ -6,11 +6,9 @@
 
 import requests
 from bs4 import BeautifulSoup
-from db.models import Event
-from db.db_config import SessionLocal
-from db.models import Event
+from database.models import Event
+from database.config import SessionLocal
 from dateutil import parser
-from datetime import datetime
 
 BASE_URL = "https://www.dpacnc.com"
 EVENTS_URL = f"{BASE_URL}/events/all"

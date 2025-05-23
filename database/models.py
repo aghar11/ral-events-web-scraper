@@ -6,7 +6,7 @@
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, DateTime, UniqueConstraint, create_engine
-from db.db_config import DATABASE_URL
+from database.config import DATABASE_URL
 
 Base = declarative_base()
 
